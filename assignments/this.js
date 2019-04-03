@@ -41,7 +41,27 @@ const dogs = {
 // Principle 3
 
 // code example for New Binding
+function animal() {
+    return `Hello, my favorite animal is ${this.animal}`
+}
+
+const Dani = {
+    animal: 'Penguins'
+}
+
+animal.call(Dani);
 
 // Principle 4
 
 // code example for Explicit Binding
+const dog = {
+    "name":"Luke"
+  }
+  
+  function tricks(trick1,trick2,trick3){
+    return `Hello, my name is ${this.name} and I'm really good at  ${trick1},${trick2} and ${trick3}`;
+  }
+  
+  const skills = ["fetching","sitting","laying down"];
+
+  console.log(tricks.call(dog,...skills));
